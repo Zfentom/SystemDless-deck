@@ -1,9 +1,32 @@
 import { defineConfig } from 'vitepress'
+import { compression } from 'vite-plugin-compression2'
 
 export default defineConfig({
+vite: {
+    plugins: [
+    compression({
+     algorithms: ['brotliCompress'],
+     threshold: 1024,
+    })
+  ],
+  build:  {
+    assetsInlineLimit: 10240,
+    minify: 'terser',
+      terserOptions: {
+        compress: {
+          drop_console: true, 
+          drop_debugger: true
+        }
+      }
+    }
+  },
+
+head: [
+  ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+  ['link', { rel: 'icon', href: '/SystemDless-deck/toolbox.svg' }],
+],
 
   base: '/SystemDless-deck/',
-
   title: "SystemDless Deck",
   description: "Steam Deck Linux environment without systemd",
   themeConfig: {
@@ -13,12 +36,11 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Information',
+        text: 'Introduction',
         items: [
-          { text: 'Faq', link: '/artix/why' },
           { text: 'Preperation', link: '/artix/install/preparation' },
-          { 
-            text: 'Install Artix',
+          {
+            text: 'Installation',
             collapsed: true,
             items: [
               { text: 'Connect to WI-FI', link: '/artix/install/wifi' },
@@ -29,7 +51,7 @@ export default defineConfig({
             ]
            },
           { 
-            text: 'First boot',
+            text: 'Post-Installation',
             collapsed: true,
             items: [
               { text: 'Reboot', link: '/artix/boot/reboot' },
@@ -40,9 +62,10 @@ export default defineConfig({
             text: 'Hardware',
             collapsed: true,
             items: [
-              { text: 'GPU and KDE', link: '/artix/hardware/gpu' },
+              { text: 'Desktop Setup', link: '/artix/hardware/gpu' },
               { text: 'Drivers', link: '/artix/hardware/drivers' },
-              { text: 'Audio', link: '/artix/hardware/audio' }
+              { text: 'Audio', link: '/artix/hardware/audio' },
+              { text: 'Controller Input', link: '/artix/hardware/input' }
             ]
           },
           {
@@ -50,10 +73,14 @@ export default defineConfig({
             collapsed: true,
             items: [
               { text: 'Steam Installation', link: '/artix/software/steam' },
-              { text: 'Quality of Life Improvements', link: '/artux/software/qol' }
+              { text: 'Quality of Life Improvements', link: '/artix/software/qol' }
             ]
-          }
+          },
+          { text: 'FAQ', link: '/artix/why' },
+          { text: 'Known Issues and Workarounds', link: '/artix/software/issues-fix' }
+
         ]
+        
       },
       {
         text: 'Steamdeck',

@@ -1,22 +1,43 @@
-# Why?
+# FAQ
 
-You might ask: *“Why switch away from systemd?”*
+## Why switch away from systemd?
 
-That’s a fair question.
+There are both practical and philosophical reasons.
 
-On the Steam Deck, parts of the system can feel heavier than expected. Boot time is fine in most cases, but switching sessions or entering KDE (desktop mode) can feel slower than it should for a handheld device focused on responsiveness.
+On the Steam Deck, some parts of the system can feel heavier than expected. While boot times are generally acceptable, switching sessions or entering KDE Desktop Mode may feel slower than expected for a handheld device focused on responsiveness.
 
-There’s also a broader system design direction behind modern Linux distributions. Systemd continues to grow beyond the traditional role of an init system, expanding into areas like user management and system-wide configuration. This includes richer structured user data in system databases and deeper integration with core system components.
+There is also a broader design consideration. Systemd has expanded beyond its original role as an init system and now provides functionality such as user management, networking components, and various system services. This results in a more integrated system, but also increases complexity and centralization.
 
-This approach trades simplicity for integration. Instead of many small, separate components doing one job each, more responsibilities are centralized into a single tightly connected system.
+SystemDless Deck takes a different approach by keeping the base system minimal and allowing users to choose which components they want to build on top of it.
 
-SteamOS also reflects a similar philosophy in user space by leaning heavily on Flatpak for desktop applications. This provides consistency and sandboxing, but it also reduces how much direct control you have over the base system and how software integrates at the system level.
+## Why Artix Linux?
 
-SystemDless Deck exists in response to that direction. It focuses on keeping the base system minimal and letting the user decide what gets added on top, rather than assuming a full stack from the start.
+Artix Linux provides a systemd-free environment while remaining fully compatible with Arch Linux.
 
+This project uses OpenRC as its init system, keeping service management straightforward and modular while avoiding a dependency on systemd.
 
-# Why Artix?
+Because Artix remains Arch-compatible, users retain access to the Arch User Repository (AUR), providing a large ecosystem of community-maintained packages.
 
-Artix Linux is used as the base system to provide a systemd-free environment with OpenRC as the init system. This keeps service management explicit and modular, avoiding the complexity of systemd while maintaining a lightweight and transparent system design.
+## Why OpenRC?
 
-The system remains Arch-compatible, allowing access to the Arch User Repository (AUR) for a wide range of additional software beyond the official repositories.
+OpenRC is a mature and lightweight init system that focuses on service supervision and dependency management without requiring systemd.
+
+It is simple to understand, easy to debug, and integrates well with the goals of a minimal, user-controlled system.
+
+## Does this mean Flatpak is unsupported?
+
+No.
+
+Flatpak works perfectly fine on Artix and can still be used if desired. The goal of this project is to provide choice, not to remove functionality.
+
+## Why OpenRC instead of runit, s6, or another init system?
+
+Artix supports multiple init systems, including OpenRC, runit, and s6.
+
+For this project, OpenRC was chosen because it strikes a balance between simplicity, flexibility, and ease of maintenance. It provides dependency-based service management, is well documented, and is familiar to users coming from more traditional Linux distributions.
+
+OpenRC also has broader service availability within the Artix ecosystem. Some packages and community-maintained service scripts are only available for OpenRC, which reduces the amount of manual setup required compared to other init systems.
+
+Runit and s6 are both excellent alternatives and can provide a smaller or more minimal system. However, they may require additional manual configuration and service porting depending on the software being used.
+
+The choice of OpenRC is primarily a practical one: it offers a straightforward migration path from SteamOS while remaining systemd-free.
