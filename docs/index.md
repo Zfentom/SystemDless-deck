@@ -1,11 +1,10 @@
 ---
-
 layout: home
 
 hero:
   name: "<span class='vp-home-hero-name-gradient'>SystemDless Deck</span>"
-  text: "Steam Deck Linux environment without systemd"
-  tagline: "Minimal, modular, and built for users who want full control — by Zfentom"
+  text: "A systemd-free Linux environment for Steam Deck"
+  tagline: "Take control of your Steam Deck, from init to desktop."
   actions:
     - theme: brand
       text: Get Started
@@ -15,13 +14,12 @@ hero:
       link: https://github.com/Zfentom/SystemDless-Deck
 
 features:
-  - title: Lightweight init system
-    details: Replace systemd with a minimal init setup designed for faster boot and lower overhead.
+  - title: Systemd-free by design
+    details: "Replace systemd with a lightweight init and service stack, giving you greater control over how your system starts and runs."
 
-  - title: Steam Deck compatibility focused
-    details: Tuned for handheld hardware, including AMD APU power management and gaming workloads.
+  - title: Built for Steam Deck
+    details: "Configured with the Steam Deck's AMD hardware, power management, and gaming-focused workload in mind."
 
-  - title: Modular system design
-    details: Install only what you need — avoid unnecessary services and background processes.
-
+  - title: Modular and transparent
+    details: "Keep your system lean and understandable. Choose the services and components you actually need, without unnecessary background overhead."
 ---

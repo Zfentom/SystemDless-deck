@@ -23,7 +23,7 @@ vite: {
 
 head: [
   ['meta', { name: 'viewport', content: 'width=device-width, initial-scale=1' }],
-  ['link', { rel: 'icon', href: '/SystemDless-deck/toolbox.svg' }],
+  ['link', { rel: 'icon', href: '/SystemDless-deck/layers.png' }],
 ],
 
   base: '/SystemDless-deck/',
@@ -38,7 +38,9 @@ head: [
       {
         text: 'Introduction',
         items: [
-          { text: 'Preperation', link: '/artix/install/preparation' },
+          { text: 'Why Though?', link: '/artix/why' },
+          { text: 'Requirements', link: '/artix/requirements' },
+          { text: 'Preperation', link: '/artix/preparation' },
           {
             text: 'Installation',
             collapsed: true,
@@ -73,12 +75,11 @@ head: [
             collapsed: true,
             items: [
               { text: 'Steam Installation', link: '/artix/software/steam' },
-              { text: 'Quality of Life Improvements', link: '/artix/software/qol' }
+              { text: 'Quality of Life Improvements', link: '/artix/software/qol' },
+              { text: 'Issues and Workarounds', link: '/artix/software/issues-fix' },
             ]
           },
-          { text: 'FAQ', link: '/artix/why' },
-          { text: 'Known Issues and Workarounds', link: '/artix/software/issues-fix' }
-
+          { text: 'Credits', link: '/credits'}
         ]
         
       },
