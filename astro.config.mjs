@@ -10,10 +10,6 @@ export default defineConfig({
 			plugins: [starlightThemeNord()],
 			title: 'SystemDless Deck',
 			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
-		    customCss: [
-        	// Relative path to your custom CSS file
-        		'./src/styles/custom.css',
-      		],
 			sidebar: [
 				{
 					label: 'Getting Started',
