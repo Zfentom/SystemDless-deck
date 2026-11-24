@@ -6,7 +6,7 @@ import starlightThemeNord from 'starlight-theme-nord';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://zfentom.github.io',
-  	base: '/SystemDless-Deck'/,
+  	base: '/SystemDless-Deck/',
 	integrations: [
 		starlight({
 			plugins: [starlightThemeNord()],
