@@ -20,7 +20,7 @@ export default defineConfig({
 						{ label: 'FAQ', slug: 'artix/why' },
 						{ label: 'Requirements', slug: 'artix/requirements' },
 						{ label: 'Preparation', slug: 'artix/preparation' },
-						{ label: 'Credits', slug: 'credits'}
+						{ label: 'Credits', slug: 'artix/software/credits' }
 					],
 				},
 				{
